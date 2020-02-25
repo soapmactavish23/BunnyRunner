@@ -1,6 +1,5 @@
 extends "res://scripts/Game.gd"
 
-
 func _ready():
 	pass
 

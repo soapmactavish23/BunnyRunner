@@ -1,0 +1,130 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://probs/Bg.tscn" type="PackedScene" id=1]
+[ext_resource path="res://probs/tileset.tscn" type="PackedScene" id=2]
+[ext_resource path="res://probs/fade.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=4]
+[ext_resource path="res://sprites/Players/bunny1_walk1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Players/bunny1_walk2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Players/bunny1_hurt.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Players/bunny1_jump.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Players/bunny1_stand.png" type="Texture" id=9]
+[ext_resource path="res://sprites/Particles/smoke.png" type="Texture" id=10]
+[ext_resource path="res://samples/jump.wav" type="AudioStream" id=11]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 63.3487
+height = 77.6703
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "victory",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=4]
+resource_name = "dust"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("dust:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "player_elastico"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("anim:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 0.5 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("anim:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 55 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Fase_1" type="Node2D"]
+
+[node name="Bg" parent="." instance=ExtResource( 1 )]
+
+[node name="tileset" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 1572930, 13, 0, 1769472, 13, 0, 2097255, 13, 0, 2162722, 13, 0 )
+
+[node name="fade" parent="." instance=ExtResource( 3 )]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 36.6243, 324.048 )
+script = ExtResource( 4 )
+
+[node name="shape" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+
+[node name="anim" type="AnimatedSprite" parent="Player"]
+frames = SubResource( 2 )
+animation = "jump"
+playing = true
+
+[node name="camera" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+
+[node name="animation" type="AnimationPlayer" parent="Player"]
+anims/dust = SubResource( 4 )
+anims/player_elastico = SubResource( 3 )
+
+[node name="dust" type="Node2D" parent="Player"]
+editor/display_folded = true
+position = Vector2( 0, 23.1578 )
+
+[node name="smoke" type="Sprite" parent="Player/dust"]
+position = Vector2( 74.6053, 67.2057 )
+texture = ExtResource( 10 )
+
+[node name="smoke2" type="Sprite" parent="Player/dust"]
+position = Vector2( -74.8684, 67.2057 )
+texture = ExtResource( 10 )
+
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource( 11 )

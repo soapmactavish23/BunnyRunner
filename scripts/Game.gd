@@ -2,7 +2,8 @@ extends Node2D
 
 var cenas = [
 	"res://scenes/Menu.tscn", 
-	"res://scenes/Loading_1.tscn"
+	"res://scenes/Loading_1.tscn",
+	"res://scenes/Fase_1.tscn"
 ]
 
 func mudaCena(cena):
