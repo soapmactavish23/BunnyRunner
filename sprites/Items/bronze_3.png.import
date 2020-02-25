@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/bronze_3.png-36d61155ed3c1e321e4acb1e390338f5.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Items/bronze_3.png"
-source_md5="71ce9c3c02f13cb264b04da715111944"
-
 dest_files=[ "res://.import/bronze_3.png-36d61155ed3c1e321e4acb1e390338f5.stex" ]
-dest_md5="13296b487cd7d2db75142b33426a77bc"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

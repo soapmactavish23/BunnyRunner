@@ -5,25 +5,25 @@
 [ext_resource path="res://sprites/Background/bg_layer3.png" type="Texture" id=3]
 [ext_resource path="res://sprites/Background/bg_layer4.png" type="Texture" id=4]
 
-[node name="Menu" type="Node2D"]
+[node name="Bg" type="ParallaxBackground"]
+editor/display_folded = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+editor/display_folded = true
 motion_mirroring = Vector2( 2045, 0 )
 
-[node name="bg_layer1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="bg_layer1" type="Sprite" parent="ParallaxLayer"]
 position = Vector2( 892.982, 160.289 )
 texture = ExtResource( 1 )
 
-[node name="bg_layer2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="bg_layer2" type="Sprite" parent="ParallaxLayer"]
 position = Vector2( 892.982, 160.289 )
 texture = ExtResource( 2 )
 
-[node name="bg_layer3" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="bg_layer3" type="Sprite" parent="ParallaxLayer"]
 position = Vector2( 892.982, 160.289 )
 texture = ExtResource( 3 )
 
-[node name="bg_layer4" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="bg_layer4" type="Sprite" parent="ParallaxLayer"]
 position = Vector2( 892.982, 160.289 )
 texture = ExtResource( 4 )

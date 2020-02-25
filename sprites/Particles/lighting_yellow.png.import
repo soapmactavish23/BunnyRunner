@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/lighting_yellow.png-ed402ff4ead61fe11f00acd934ad9d67.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Particles/lighting_yellow.png"
-source_md5="cc63fbf30e2aaf89d49b9b71d44de4e2"
-
 dest_files=[ "res://.import/lighting_yellow.png-ed402ff4ead61fe11f00acd934ad9d67.stex" ]
-dest_md5="63631d87fe9a030bbbd90a3a1da21909"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

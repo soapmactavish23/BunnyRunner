@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/wing_left.png-550f064b3b2422f7b336be53eb995e0a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Items/wing_left.png"
-source_md5="dbd8416c323986e658556dc72fb3fad2"
-
 dest_files=[ "res://.import/wing_left.png-550f064b3b2422f7b336be53eb995e0a.stex" ]
-dest_md5="a2ad414b764f24b8bae1b4b3adeb1b0c"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

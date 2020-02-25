@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/grass1.png-bbcb232b2348bda8db26f4d73722e1ec.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Environment/grass1.png"
-source_md5="eaec358fc580cc91227e3532f10814cc"
-
 dest_files=[ "res://.import/grass1.png-bbcb232b2348bda8db26f4d73722e1ec.stex" ]
-dest_md5="2721553681a7e02e1574043e2721ef37"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

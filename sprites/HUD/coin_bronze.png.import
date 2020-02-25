@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/coin_bronze.png-551a361f2f98d2c2374fa6420c249122.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/HUD/coin_bronze.png"
-source_md5="427e54ab24e1d4946e4616d975730e09"
-
 dest_files=[ "res://.import/coin_bronze.png-551a361f2f98d2c2374fa6420c249122.stex" ]
-dest_md5="fe8ffba5c85592bc57a91e118cb8b40a"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

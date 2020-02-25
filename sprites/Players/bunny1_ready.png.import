@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/bunny1_ready.png-dd35748c13c8cad8a36d2837e652b59b.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Players/bunny1_ready.png"
-source_md5="f750c39d46101776ae39a87296d5411e"
-
 dest_files=[ "res://.import/bunny1_ready.png-dd35748c13c8cad8a36d2837e652b59b.stex" ]
-dest_md5="695fea7233a1dcc4b4c08ec0e752e14c"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

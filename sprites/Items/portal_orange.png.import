@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/portal_orange.png-c61f0b19567e63b42cc06c9b4807e5ff.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Items/portal_orange.png"
-source_md5="7a36cf510787c8be1e2d8438b0d8e93b"
-
 dest_files=[ "res://.import/portal_orange.png-c61f0b19567e63b42cc06c9b4807e5ff.stex" ]
-dest_md5="026d16b4957eb57788f77ff82b52974c"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

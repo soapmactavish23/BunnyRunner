@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/flyMan_fly.png-066bae2d188f33377e1fda2e3afbe3d6.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Enemies/flyMan_fly.png"
-source_md5="64bc435753f8455fa492e67784b4699c"
-
 dest_files=[ "res://.import/flyMan_fly.png-066bae2d188f33377e1fda2e3afbe3d6.stex" ]
-dest_md5="2135bb9cf12a00dfd5810649f59d8d32"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

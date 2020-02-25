@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/particle_darkGrey.png-cc68c03ea63ad7d11e004a9e0214bc2c.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Particles/particle_darkGrey.png"
-source_md5="a415a469c487f498ad58a1c514fcf169"
-
 dest_files=[ "res://.import/particle_darkGrey.png-cc68c03ea63ad7d11e004a9e0214bc2c.stex" ]
-dest_md5="46ec879df70059bdbe5f1eb6b5a4d967"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

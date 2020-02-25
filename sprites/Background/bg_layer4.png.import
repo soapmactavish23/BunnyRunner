@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/bg_layer4.png-f4b09b1b1b55e864b574f051ea81b4af.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Background/bg_layer4.png"
-source_md5="fce1d7a886cb662c0a4fd67441a82452"
-
 dest_files=[ "res://.import/bg_layer4.png-f4b09b1b1b55e864b574f051ea81b4af.stex" ]
-dest_md5="191b1fab86e5507c4b878b9dc74ad174"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

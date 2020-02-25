@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/ground_snow.png-0b15b3027747d632e3443ea939e89f76.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/Environment/ground_snow.png"
-source_md5="e259012494f2a590fa6ea41bcc4bf7bd"
-
 dest_files=[ "res://.import/ground_snow.png-0b15b3027747d632e3443ea939e89f76.stex" ]
-dest_md5="331e3738452f120aa1b0b8e44eacdd24"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

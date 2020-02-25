@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/carrots.png-71842e595c841b5fe5848c7a5892be3a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://sprites/HUD/carrots.png"
-source_md5="225840b1449d57af7f3d96678485c35d"
-
 dest_files=[ "res://.import/carrots.png-71842e595c841b5fe5848c7a5892be3a.stex" ]
-dest_md5="7dc5910c38cfe2b57af016172f4f3346"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false
