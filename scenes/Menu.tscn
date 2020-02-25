@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://probs/Bg.tscn" type="PackedScene" id=1]
 [ext_resource path="res://probs/texto.tscn" type="PackedScene" id=2]
 [ext_resource path="res://probs/fade.tscn" type="PackedScene" id=3]
+[ext_resource path="res://music/happy.ogg" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/Chocolate Bar Demo.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = SubResource( 1 )
 
 [node name="Menu" type="Node2D"]
 
@@ -12,3 +20,31 @@
 position = Vector2( 368.215, 66.9482 )
 
 [node name="fade" parent="." instance=ExtResource( 3 )]
+
+[node name="btnJogar" type="Button" parent="."]
+margin_left = 427.0
+margin_top = 324.0
+margin_right = 643.0
+margin_bottom = 402.0
+custom_fonts/font = SubResource( 2 )
+text = "jogar"
+
+[node name="btnCreditos" type="Button" parent="."]
+margin_left = 426.795
+margin_top = 412.847
+margin_right = 628.795
+margin_bottom = 490.847
+custom_fonts/font = SubResource( 2 )
+text = "Créditos"
+
+[node name="btnSair" type="Button" parent="."]
+margin_left = 427.0
+margin_top = 502.0
+margin_right = 643.0
+margin_bottom = 580.0
+custom_fonts/font = SubResource( 2 )
+text = "Sair"
+
+[node name="musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
