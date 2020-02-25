@@ -6,20 +6,17 @@ var cenas = [
 	"res://scenes/Fase_1.tscn"
 ]
 
-var moeda
-
 func _ready():
 	add_to_group("scenes")
-	moeda = 0
 
 func mudaCena(cena):
 	get_tree().change_scene(cena)
-
-func add_moeda():
-	moeda += 1
-	$HUD/txtMoeda.text = "x " + str(moeda)
-	$HUD/txtMoeda2.text = "x " + str(moeda)
 	
 func stop_song():
 	$Player/musica.stop()
+
+func play_song():
+	$Player/musica.play()
 	
+func game_over():
+	get_tree().reload_current_scene()

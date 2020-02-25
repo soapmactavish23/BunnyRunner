@@ -24,7 +24,8 @@ func _physics_process(delta):
 		if morreu:
 			velocity.y = -1000
 		morreu = false
-		get_tree().call_group("fade","fade_out")
+		if position.y > 650:
+			get_tree().call_group("scenes", "game_over")
 	else:
 		#Gravidade
 		velocity.y += GRAV * delta
@@ -75,6 +76,3 @@ func dead():
 	$anim.play("hurt")
 	collision_layer = 0
 	collision_mask = 0
-
-func _on_timer_game_over_timeout():
-	print("acabou")

@@ -8,4 +8,4 @@ func _on_moeda_body_entered(body):
 	$anim.hide()
 	$Particles2D.emitting = true
 	yield($audio,"finished")
-	get_tree().call_group("scenes", "add_moeda")
+	get_tree().call_group("hud", "add_moeda")
