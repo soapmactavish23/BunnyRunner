@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/HUD/coin_gold.png" type="Texture" id=1]
+[ext_resource path="res://probs/fade.tscn" type="PackedScene" id=2]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/Chocolate Bar Demo.otf"
@@ -10,7 +11,6 @@ size = 48
 font_data = SubResource( 1 )
 
 [node name="HUD" type="CanvasLayer"]
-editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 55.6507, 53.0007 )
@@ -32,3 +32,5 @@ margin_right = 165.751
 margin_bottom = 78.5003
 custom_fonts/font = SubResource( 2 )
 text = "x 0"
+
+[node name="fade" parent="." instance=ExtResource( 2 )]

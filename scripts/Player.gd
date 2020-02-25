@@ -9,13 +9,23 @@ var jump_release = false
 var was_on_floor = false
 var ending = false
 var pulo_mola = false
+var morreu = false
 
 func _ready():
 	set_physics_process(true)
 	add_to_group("player")
 
 func _physics_process(delta):
-	if not ending:
+	if ending:
+		velocity.x = 0
+		velocity.y += GRAV * delta
+		velocity = move_and_slide(velocity)
+		
+		if morreu:
+			velocity.y = -1000
+		morreu = false
+		get_tree().call_group("fade","fade_out")
+	else:
 		#Gravidade
 		velocity.y += GRAV * delta
 		velocity.x = VELX
@@ -36,9 +46,10 @@ func _physics_process(delta):
 				
 		if pulo_mola:
 			velocity.y = -1200
-			$sound_jump.play()
 		
-		#$dust.hide()
+		if position.y > 500:
+			dead()
+			
 		was_on_floor = is_on_floor()
 		jump = false
 		jump_release = false
@@ -57,3 +68,13 @@ func happy():
 
 func pulo_mola():
 	pulo_mola = true
+
+func dead():
+	ending = true
+	morreu = true
+	$anim.play("hurt")
+	collision_layer = 0
+	collision_mask = 0
+
+func _on_timer_game_over_timeout():
+	print("acabou")
