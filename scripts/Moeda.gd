@@ -3,8 +3,9 @@ extends Area2D
 func _ready():
 	pass
 
-
 func _on_moeda_body_entered(body):
 	$audio.play()
+	$anim.hide()
+	$Particles2D.emitting = true
 	yield($audio,"finished")
-	queue_free()
+	get_tree().call_group("scenes", "add_moeda")

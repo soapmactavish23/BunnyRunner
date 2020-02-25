@@ -6,8 +6,18 @@ var cenas = [
 	"res://scenes/Fase_1.tscn"
 ]
 
+var moeda
+
+func _ready():
+	add_to_group("scenes")
+	moeda = 0
+
 func mudaCena(cena):
 	get_tree().change_scene(cena)
 
-func _ready():
-	pass
+func add_moeda():
+	moeda += 1
+	print(moeda)
+	
+func stop_song():
+	$musica.stop()

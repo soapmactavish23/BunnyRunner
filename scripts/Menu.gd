@@ -11,3 +11,4 @@ func _on_btnCreditos_pressed():
 	
 func _on_btnSair_pressed():
 	get_tree().quit()
+	
