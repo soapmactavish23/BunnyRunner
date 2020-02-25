@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprites/Background/bg_layer1.png" type="Texture" id=1]
 [ext_resource path="res://sprites/Background/bg_layer2.png" type="Texture" id=2]
 [ext_resource path="res://sprites/Background/bg_layer3.png" type="Texture" id=3]
 [ext_resource path="res://sprites/Background/bg_layer4.png" type="Texture" id=4]
+[ext_resource path="res://probs/fade.tscn" type="PackedScene" id=5]
 
 [node name="Bg" type="ParallaxBackground"]
 editor/display_folded = true
@@ -27,3 +28,5 @@ texture = ExtResource( 3 )
 [node name="bg_layer4" type="Sprite" parent="ParallaxLayer"]
 position = Vector2( 892.982, 160.289 )
 texture = ExtResource( 4 )
+
+[node name="fade" parent="." instance=ExtResource( 5 )]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/Chocolate Bar Demo.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = SubResource( 1 )
+
+[node name="texto" type="Node2D"]
+editor/display_folded = true
+
+[node name="Label2" type="Label" parent="."]
+margin_top = 23.2949
+margin_right = 318.0
+margin_bottom = 75.2949
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Bunny Runner"
+align = 1
+
+[node name="Label" type="Label" parent="."]
+margin_top = 13.977
+margin_right = 318.0
+margin_bottom = 65.977
+custom_fonts/font = SubResource( 2 )
+text = "Bunny Runner"
+align = 1
