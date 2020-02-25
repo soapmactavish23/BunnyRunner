@@ -17,7 +17,9 @@ func mudaCena(cena):
 
 func add_moeda():
 	moeda += 1
-	print(moeda)
+	$HUD/txtMoeda.text = "x " + str(moeda)
+	$HUD/txtMoeda2.text = "x " + str(moeda)
 	
 func stop_song():
-	$musica.stop()
+	$Player/musica.stop()
+	

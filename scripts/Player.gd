@@ -8,6 +8,7 @@ var jump = false
 var jump_release = false
 var was_on_floor = false
 var ending = false
+var pulo_mola = false
 
 func _ready():
 	set_physics_process(true)
@@ -32,11 +33,16 @@ func _physics_process(delta):
 			$anim.play("jump")
 			if jump_release:
 				velocity.y *= .3
+				
+		if pulo_mola:
+			velocity.y = -1200
+			$sound_jump.play()
 		
 		#$dust.hide()
 		was_on_floor = is_on_floor()
 		jump = false
 		jump_release = false
+		pulo_mola = false
 	
 func _input(event):
 	if event is InputEventMouseButton:
@@ -48,3 +54,6 @@ func _input(event):
 func happy():
 	$anim.play("victory")
 	ending = true
+
+func pulo_mola():
+	pulo_mola = true
