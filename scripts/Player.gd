@@ -4,12 +4,14 @@ const VELX = 500
 const GRAV = 1500
 
 var velocity = Vector2(0,0)
+
 var jump = false
 var jump_release = false
 var was_on_floor = false
 var ending = false
 var pulo_mola = false
 var morreu = false
+var kill_enemy = false
 
 func _ready():
 	set_physics_process(true)
@@ -48,6 +50,9 @@ func _physics_process(delta):
 		if pulo_mola:
 			velocity.y = -1200
 		
+		if kill_enemy:
+			velocity.y = -800
+		
 		if position.y > 500:
 			dead()
 			
@@ -55,7 +60,8 @@ func _physics_process(delta):
 		jump = false
 		jump_release = false
 		pulo_mola = false
-	
+		kill_enemy = false
+		
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
@@ -76,3 +82,6 @@ func dead():
 	$anim.play("hurt")
 	collision_layer = 0
 	collision_mask = 0
+
+func kill_enemy():
+	kill_enemy = true
