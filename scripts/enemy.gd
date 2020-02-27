@@ -4,7 +4,7 @@ func _ready():
 	pass
 
 func _on_enemy_damage_body_entered(body):
-	get_tree().call_group("player", "dead")
+	get_tree().call_group("hud", "del_vida")
 
 
 func _on_enemy_hurt_body_entered(body):

@@ -102,3 +102,7 @@ func kill_enemy():
 func ativar_asas():
 	$asas.show()
 	modo_voador = true
+
+func powerup_finished():
+	$asas.hide()
+	modo_voador = false
