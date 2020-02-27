@@ -7,7 +7,7 @@
 [ext_resource path="res://probs/musica.tscn" type="PackedScene" id=5]
 [ext_resource path="res://probs/fade.tscn" type="PackedScene" id=6]
 [ext_resource path="res://probs/HUD.tscn" type="PackedScene" id=7]
-[ext_resource path="res://sprites/Items/powerup_wings.png" type="Texture" id=8]
+[ext_resource path="res://probs/item_asas.tscn" type="PackedScene" id=8]
 
 [node name="Fase_1" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,6 +19,7 @@ tile_data = PoolIntArray( 1572930, 13, 0, 1769472, 13, 0, 2162722, 13, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
+position = Vector2( 90.631, 219.025 )
 collision_layer = 31
 collision_mask = 31
 
@@ -29,8 +30,5 @@ position = Vector2( -36.6243, -324.048 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="powerup_wings" type="Sprite" parent="Area2D"]
-position = Vector2( 309.602, 385.006 )
-texture = ExtResource( 8 )
+[node name="item_asas" parent="." instance=ExtResource( 8 )]
+position = Vector2( 752.741, 455.673 )

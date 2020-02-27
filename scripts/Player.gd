@@ -12,6 +12,8 @@ var ending = false
 var pulo_mola = false
 var morreu = false
 var kill_enemy = false
+var modo_voador = false
+var voo = false
 
 func _ready():
 	set_physics_process(true)
@@ -46,7 +48,6 @@ func _physics_process(delta):
 			$anim.play("jump")
 			if jump_release:
 				velocity.y *= .3
-				
 		if pulo_mola:
 			velocity.y = -1200
 		
@@ -55,17 +56,27 @@ func _physics_process(delta):
 		
 		if position.y > 500:
 			dead()
+		
+		if voo:
+			velocity.y = -800
+			collision_layer = 2
+			collision_mask = 2
+			$animation.play("asas")
+			$sound_voo.play()
 			
 		was_on_floor = is_on_floor()
 		jump = false
 		jump_release = false
 		pulo_mola = false
 		kill_enemy = false
+		voo = false
 		
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			jump = true
+			if modo_voador:
+				voo = true
 		else:
 			jump_release = true
 
@@ -77,6 +88,8 @@ func pulo_mola():
 	pulo_mola = true
 
 func dead():
+	get_tree().call_group("scenes", "stop_song")
+	$sound_dead.play()
 	ending = true
 	morreu = true
 	$anim.play("hurt")
@@ -85,3 +98,7 @@ func dead():
 
 func kill_enemy():
 	kill_enemy = true
+
+func ativar_asas():
+	$asas.show()
+	modo_voador = true
