@@ -5,4 +5,4 @@ func _ready():
 	pass
 	
 func victory():
-	mudaCena(cenas[0])
+	mudaCena(cenas[3])

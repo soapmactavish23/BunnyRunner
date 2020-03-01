@@ -53,3 +53,6 @@ func _on_btnSound_pressed():
 		$pause/btnSound/anim.play("on")
 		som_ligado = true
 		get_tree().call_group("scenes", "play_song")
+		
+func _hide_bar():
+	$barra_power.hide()
