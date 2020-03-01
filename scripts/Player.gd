@@ -25,11 +25,9 @@ func _physics_process(delta):
 		velocity.y += GRAV * delta
 		velocity = move_and_slide(velocity)
 		
-		if morreu:
-			velocity.y = -1000
-		morreu = false
 		if position.y > 650:
 			get_tree().call_group("scenes", "game_over")
+			
 	else:
 		#Gravidade
 		velocity.y += GRAV * delta
@@ -38,6 +36,7 @@ func _physics_process(delta):
 		
 		if is_on_floor():
 			if not was_on_floor:
+				modo_voador = false
 				$animation.play("player_elastico")
 				$animation.play("dust")
 			$anim.play("walk")
@@ -59,8 +58,6 @@ func _physics_process(delta):
 		
 		if voo:
 			velocity.y = -800
-			collision_layer = 2
-			collision_mask = 2
 			$animation.play("asas")
 			$sound_voo.play()
 			
@@ -76,6 +73,8 @@ func _input(event):
 		if event.pressed:
 			jump = true
 			if modo_voador:
+				collision_layer = 0
+				collision_mask = 0
 				voo = true
 		else:
 			jump_release = true
@@ -89,12 +88,14 @@ func pulo_mola():
 
 func dead():
 	get_tree().call_group("scenes", "stop_song")
-	$sound_dead.play()
-	ending = true
-	morreu = true
-	$anim.play("hurt")
-	collision_layer = 0
-	collision_mask = 0
+	if !ending and !morreu:
+		ending = true
+		morreu = true
+		$anim.play("hurt")
+		collision_layer = 0
+		collision_mask = 0
+		$sound_dead.play()
+		velocity.y = -1000
 
 func kill_enemy():
 	kill_enemy = true

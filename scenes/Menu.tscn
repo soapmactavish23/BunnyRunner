@@ -31,30 +31,30 @@ position = Vector2( 368.215, 66.9482 )
 [node name="fade" parent="." instance=ExtResource( 6 )]
 
 [node name="btnJogar" type="Button" parent="."]
-margin_left = 427.0
-margin_top = 324.0
-margin_right = 643.0
-margin_bottom = 402.0
+margin_left = 380.637
+margin_top = 386.905
+margin_right = 649.637
+margin_bottom = 444.905
 custom_fonts/font = SubResource( 2 )
 text = "jogar"
 
-[node name="btnCreditos" type="Button" parent="."]
-margin_left = 426.795
-margin_top = 412.847
-margin_right = 628.795
-margin_bottom = 490.847
+[node name="btnSelect" type="Button" parent="."]
+margin_left = 381.0
+margin_top = 458.992
+margin_right = 655.0
+margin_bottom = 516.992
 custom_fonts/font = SubResource( 2 )
-text = "Créditos"
+text = "CapItulos"
 
 [node name="btnSair" type="Button" parent="."]
-margin_left = 427.0
-margin_top = 502.0
-margin_right = 643.0
-margin_bottom = 580.0
+margin_left = 380.0
+margin_top = 530.695
+margin_right = 654.0
+margin_bottom = 588.695
 custom_fonts/font = SubResource( 2 )
 text = "Sair"
 
 [node name="musica" parent="." instance=ExtResource( 7 )]
 [connection signal="pressed" from="btnJogar" to="." method="_on_btnJogar_pressed"]
-[connection signal="pressed" from="btnCreditos" to="." method="_on_btnCreditos_pressed"]
+[connection signal="pressed" from="btnSelect" to="." method="_on_btnSelect_pressed"]
 [connection signal="pressed" from="btnSair" to="." method="_on_btnSair_pressed"]

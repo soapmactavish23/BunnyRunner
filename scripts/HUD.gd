@@ -13,8 +13,7 @@ func _ready():
 	update_hud(vida)
 
 func _process(delta):
-	if vida <= 0:
-		get_tree().call_group("player", "dead")
+	pass
 
 func update_hud(val):
 	if val == moeda:
@@ -31,8 +30,8 @@ func add_moeda():
 func del_vida():
 	vida -= 1
 	update_hud(vida)
-	
-
+	if vida <= 0:
+		get_tree().call_group("player", "dead")
 
 func _on_btnPause_pressed():
 	get_tree().paused = true
