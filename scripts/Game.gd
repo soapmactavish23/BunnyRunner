@@ -4,6 +4,10 @@ var cenas = [
 	"res://scenes/Menu.tscn", 
 	"res://scenes/Loading_1.tscn",
 	"res://scenes/Fase_1.tscn",
+	"res://scenes/Loading_2.tscn",
+	"res://scenes/Fase_2.tscn",
+	"res://scenes/Loading_3.tscn",
+	"res://scenes/Fase_3.tscn",
 	"res://scenes/Ending.tscn"
 ]
 

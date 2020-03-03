@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://probs/Bg.tscn" type="PackedScene" id=2]
@@ -6,7 +6,28 @@
 [ext_resource path="res://probs/player_anim.tscn" type="PackedScene" id=4]
 [ext_resource path="res://probs/texto.tscn" type="PackedScene" id=5]
 [ext_resource path="res://probs/fade.tscn" type="PackedScene" id=6]
-[ext_resource path="res://probs/musica.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark37.png" type="Texture" id=7]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark28.png" type="Texture" id=8]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark12.png" type="Texture" id=9]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark14.png" type="Texture" id=10]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark08.png" type="Texture" id=11]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark10.png" type="Texture" id=12]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark16.png" type="Texture" id=13]
+[ext_resource path="res://probs/musica.tscn" type="PackedScene" id=14]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark30.png" type="Texture" id=15]
+
+[sub_resource type="Theme" id=3]
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.901961, 0.901961, 0.901961, 0.2 )
+Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/Chocolate Bar Demo.otf"
@@ -14,6 +35,39 @@ font_path = "res://fonts/Chocolate Bar Demo.otf"
 [sub_resource type="DynamicFont" id=2]
 size = 48
 font_data = SubResource( 1 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "on",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "off",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "on",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "off",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://fonts/Chocolate Bar Demo.otf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 48
+font_data = SubResource( 6 )
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,32 +84,208 @@ position = Vector2( 368.215, 66.9482 )
 
 [node name="fade" parent="." instance=ExtResource( 6 )]
 
-[node name="btnJogar" type="Button" parent="."]
-margin_left = 380.637
-margin_top = 386.905
-margin_right = 649.637
-margin_bottom = 444.905
-custom_fonts/font = SubResource( 2 )
-text = "jogar"
+[node name="HUD_menu" type="Node2D" parent="."]
+editor/display_folded = true
 
-[node name="btnSelect" type="Button" parent="."]
-visible = false
-margin_left = 381.0
-margin_top = 458.992
-margin_right = 655.0
-margin_bottom = 516.992
+[node name="btnJogar" type="Button" parent="HUD_menu"]
+margin_left = 392.319
+margin_top = 305.404
+margin_right = 512.319
+margin_bottom = 363.404
+rect_scale = Vector2( 2.22872, 1.78872 )
+rect_pivot_offset = Vector2( 2.03802, 3.32629 )
+theme = SubResource( 3 )
 custom_fonts/font = SubResource( 2 )
-text = "CapItulos"
+icon = ExtResource( 7 )
+flat = true
+
+[node name="btnSelect" type="Button" parent="HUD_menu"]
+margin_left = 491.627
+margin_top = 419.857
+margin_right = 551.627
+margin_bottom = 477.857
+rect_scale = Vector2( 1.33034, 1.2527 )
+custom_fonts/font = SubResource( 2 )
+icon = ExtResource( 8 )
+flat = true
+
+[node name="btnMusica" type="Button" parent="HUD_menu"]
+editor/display_folded = true
+margin_left = 404.999
+margin_top = 421.941
+margin_right = 464.999
+margin_bottom = 475.941
+rect_scale = Vector2( 1.26104, 1.27153 )
+flat = true
+
+[node name="anim" type="AnimatedSprite" parent="HUD_menu/btnMusica"]
+position = Vector2( 30.0844, 26.1977 )
+scale = Vector2( 1.15287, 1 )
+frames = SubResource( 4 )
+animation = "on"
+
+[node name="btnSom" type="Button" parent="HUD_menu"]
+editor/display_folded = true
+margin_left = 585.0
+margin_top = 427.0
+margin_right = 635.0
+margin_bottom = 476.0
+rect_scale = Vector2( 1.28, 1.2 )
+flat = true
+
+[node name="anim" type="AnimatedSprite" parent="HUD_menu/btnSom"]
+position = Vector2( 23.1331, 24.7701 )
+frames = SubResource( 5 )
+animation = "on"
+
+[node name="HUD_capitulos" type="Node2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="GridContainer" type="GridContainer" parent="HUD_capitulos"]
+editor/display_folded = true
+margin_left = 104.578
+margin_top = 304.458
+margin_right = 941.578
+margin_bottom = 486.458
+columns = 5
+
+[node name="btnFase_1" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_right = 159.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 1"
+
+[node name="btnFase_2" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 163.0
+margin_right = 327.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 2"
+
+[node name="btnFase_3" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 331.0
+margin_right = 494.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 3"
+
+[node name="btnFase_4" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 498.0
+margin_right = 661.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 4"
+
+[node name="btnFase_5" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 665.0
+margin_right = 837.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 5"
+
+[node name="btnFase_6" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_top = 62.0
+margin_right = 159.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 6"
+
+[node name="btnFase_7" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 163.0
+margin_top = 62.0
+margin_right = 327.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 7"
+
+[node name="btnFase_8" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 331.0
+margin_top = 62.0
+margin_right = 494.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 8"
+
+[node name="btnFase_9" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 498.0
+margin_top = 62.0
+margin_right = 661.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 9"
+
+[node name="btnFase_10" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 665.0
+margin_top = 62.0
+margin_right = 837.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 10"
+
+[node name="btnFase_11" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_top = 124.0
+margin_right = 159.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 11"
+
+[node name="btnFase_12" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 163.0
+margin_top = 124.0
+margin_right = 327.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 12"
+
+[node name="btnFase_13" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 331.0
+margin_top = 124.0
+margin_right = 494.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 13"
+
+[node name="btnFase_14" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 498.0
+margin_top = 124.0
+margin_right = 661.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 14"
+
+[node name="btnFase_15" type="Button" parent="HUD_capitulos/GridContainer"]
+margin_left = 665.0
+margin_top = 124.0
+margin_right = 837.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 7 )
+text = "Fase 15"
+
+[node name="btnBack" type="Button" parent="HUD_capitulos"]
+margin_left = 93.2125
+margin_top = 10.0
+margin_right = 153.213
+margin_bottom = 64.0
+rect_scale = Vector2( -1.6106, 1.58115 )
+icon = ExtResource( 13 )
+flat = true
+
+[node name="musica" parent="." instance=ExtResource( 14 )]
 
 [node name="btnSair" type="Button" parent="."]
-margin_left = 380.0
-margin_top = 468.878
-margin_right = 654.0
-margin_bottom = 526.878
+margin_left = 911.091
+margin_top = 7.62714
+margin_right = 971.091
+margin_bottom = 65.6271
+rect_scale = Vector2( 1.62655, 1.55764 )
 custom_fonts/font = SubResource( 2 )
-text = "Sair"
-
-[node name="musica" parent="." instance=ExtResource( 7 )]
-[connection signal="pressed" from="btnJogar" to="." method="_on_btnJogar_pressed"]
-[connection signal="pressed" from="btnSelect" to="." method="_on_btnSelect_pressed"]
+icon = ExtResource( 15 )
+flat = true
+[connection signal="pressed" from="HUD_menu/btnJogar" to="." method="_on_btnJogar_pressed"]
+[connection signal="pressed" from="HUD_menu/btnSelect" to="." method="_on_btnSelect_pressed"]
+[connection signal="pressed" from="HUD_menu/btnMusica" to="." method="_on_btnMusica_pressed"]
+[connection signal="pressed" from="HUD_menu/btnSom" to="." method="_on_btnSom_pressed"]
+[connection signal="pressed" from="HUD_capitulos/GridContainer/btnFase_1" to="." method="_on_btnFase_1_pressed"]
+[connection signal="pressed" from="HUD_capitulos/btnBack" to="." method="_on_btnBack_pressed"]
 [connection signal="pressed" from="btnSair" to="." method="_on_btnSair_pressed"]

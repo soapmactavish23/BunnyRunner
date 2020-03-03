@@ -60,7 +60,7 @@ func _physics_process(delta):
 		kill_enemy = false
 		voo = false
 func _input(event):
-	if event is InputEventMouseButton:
+	if event is InputEventKey or event is InputEventMouseButton:
 		if event.pressed:
 			jump = true
 			if modo_voador:

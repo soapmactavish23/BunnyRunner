@@ -37,7 +37,6 @@ shape = SubResource( 1 )
 
 [node name="anim" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 3
 playing = true
 
 [node name="audio" type="AudioStreamPlayer2D" parent="."]
