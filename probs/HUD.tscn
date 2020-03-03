@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://probs/fade.tscn" type="PackedScene" id=2]
@@ -7,11 +7,12 @@
 [ext_resource path="res://sprites/HUD/lineDark/lineDark37.png" type="Texture" id=5]
 [ext_resource path="res://sprites/HUD/lineDark/lineDark12.png" type="Texture" id=6]
 [ext_resource path="res://sprites/HUD/lineDark/lineDark14.png" type="Texture" id=7]
-[ext_resource path="res://sprites/HUD/coin_gold.png" type="Texture" id=8]
-[ext_resource path="res://sprites/HUD/lifes.png" type="Texture" id=9]
-[ext_resource path="res://scripts/barra_power.gd" type="Script" id=10]
-[ext_resource path="res://sprites/HUD/grey_panel.png" type="Texture" id=11]
-[ext_resource path="res://sprites/HUD/blue_button00.png" type="Texture" id=12]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark40.png" type="Texture" id=8]
+[ext_resource path="res://sprites/HUD/coin_gold.png" type="Texture" id=9]
+[ext_resource path="res://sprites/HUD/lifes.png" type="Texture" id=10]
+[ext_resource path="res://scripts/barra_power.gd" type="Script" id=11]
+[ext_resource path="res://sprites/HUD/grey_panel.png" type="Texture" id=12]
+[ext_resource path="res://sprites/HUD/blue_button00.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -52,11 +53,10 @@ scale = Vector2( 1.53976, 1.46265 )
 texture = ExtResource( 3 )
 
 [node name="pause" type="Node2D" parent="."]
-editor/display_folded = true
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="pause"]
-margin_right = 1024.0
+margin_left = -2.93628
+margin_right = 1021.06
 margin_bottom = 601.0
 color = Color( 1, 1, 1, 0.576471 )
 
@@ -90,17 +90,27 @@ texture = ExtResource( 5 )
 [node name="btnSound" type="Button" parent="pause"]
 pause_mode = 2
 editor/display_folded = true
-margin_left = 470.414
+margin_left = 528.793
 margin_top = 356.26
-margin_right = 547.414
+margin_right = 605.793
 margin_bottom = 430.26
+rect_pivot_offset = Vector2( 35.3151, 32.7229 )
 flat = true
 
 [node name="anim" type="AnimatedSprite" parent="pause/btnSound"]
-position = Vector2( 39.1033, 42.0253 )
+position = Vector2( 41.0107, 34.5355 )
 scale = Vector2( 1.64934, 1.68992 )
 frames = SubResource( 1 )
 animation = "on"
+
+[node name="btnMenu" type="Button" parent="pause"]
+pause_mode = 2
+margin_left = 420.901
+margin_top = 347.513
+margin_right = 512.901
+margin_bottom = 433.513
+icon = ExtResource( 8 )
+flat = true
 
 [node name="Moedas" type="Node2D" parent="."]
 editor/display_folded = true
@@ -125,7 +135,7 @@ text = "x 0"
 
 [node name="Sprite" type="Sprite" parent="Moedas"]
 position = Vector2( 55, 50 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="Vidas" type="Node2D" parent="."]
 editor/display_folded = true
@@ -150,11 +160,12 @@ text = "x 0"
 
 [node name="Sprite" type="Sprite" parent="Vidas"]
 position = Vector2( 55, 50 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="barra_power" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 295.71, 112.24 )
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="base" type="NinePatchRect" parent="barra_power"]
 margin_left = -2.06
@@ -162,7 +173,7 @@ margin_top = -2.23662
 margin_right = 428.94
 margin_bottom = 56.7634
 rect_pivot_offset = Vector2( -1.4061, 2.4971 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 100, 100 )
 patch_margin_left = 7
 patch_margin_top = 4
@@ -175,7 +186,7 @@ margin_top = 2.0
 margin_right = 422.0
 margin_bottom = 52.0
 rect_pivot_offset = Vector2( -1.4061, 2.4971 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 100, 100 )
 patch_margin_left = 4
 patch_margin_top = 4
@@ -187,4 +198,5 @@ patch_margin_bottom = 7
 [connection signal="pressed" from="pause/btnSair" to="." method="_on_btnSair_pressed"]
 [connection signal="pressed" from="pause/btnStart" to="." method="_on_btnStart_pressed"]
 [connection signal="pressed" from="pause/btnSound" to="." method="_on_btnSound_pressed"]
+[connection signal="pressed" from="pause/btnMenu" to="." method="_on_btnMenu_pressed"]
 [connection signal="tween_completed" from="barra_power/tween" to="barra_power" method="_on_tween_tween_completed"]

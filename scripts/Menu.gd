@@ -40,6 +40,11 @@ func _on_btnBack_pressed():
 	$HUD_menu.show()
 	$HUD_capitulos.hide()
 
-
 func _on_btnFase_1_pressed():
-	mudaCena(cenas[1])
+	mudaCena(cenas[2])
+
+func _on_btnFase_2_pressed():
+	mudaCena(cenas[4])
+
+func _on_btnFase_3_pressed():
+	mudaCena(cenas[6])

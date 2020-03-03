@@ -4,4 +4,4 @@ func _ready():
 	add_to_group("scenes")
 	
 func victory():
-	mudaCena(cenas[5])
+	mudaCena(cenas[7])

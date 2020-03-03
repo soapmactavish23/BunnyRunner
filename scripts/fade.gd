@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	add_to_group("fade")
+	pass
 
 func fade_out():
 	$AnimationPlayer.play("fade_out")

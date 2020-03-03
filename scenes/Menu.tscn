@@ -5,16 +5,16 @@
 [ext_resource path="res://probs/tileset.tscn" type="PackedScene" id=3]
 [ext_resource path="res://probs/player_anim.tscn" type="PackedScene" id=4]
 [ext_resource path="res://probs/texto.tscn" type="PackedScene" id=5]
-[ext_resource path="res://probs/fade.tscn" type="PackedScene" id=6]
-[ext_resource path="res://sprites/HUD/lineDark/lineDark37.png" type="Texture" id=7]
-[ext_resource path="res://sprites/HUD/lineDark/lineDark28.png" type="Texture" id=8]
-[ext_resource path="res://sprites/HUD/lineDark/lineDark12.png" type="Texture" id=9]
-[ext_resource path="res://sprites/HUD/lineDark/lineDark14.png" type="Texture" id=10]
-[ext_resource path="res://sprites/HUD/lineDark/lineDark08.png" type="Texture" id=11]
-[ext_resource path="res://sprites/HUD/lineDark/lineDark10.png" type="Texture" id=12]
-[ext_resource path="res://sprites/HUD/lineDark/lineDark16.png" type="Texture" id=13]
-[ext_resource path="res://probs/musica.tscn" type="PackedScene" id=14]
-[ext_resource path="res://sprites/HUD/lineDark/lineDark30.png" type="Texture" id=15]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark37.png" type="Texture" id=6]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark28.png" type="Texture" id=7]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark12.png" type="Texture" id=8]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark14.png" type="Texture" id=9]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark08.png" type="Texture" id=10]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark10.png" type="Texture" id=11]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark16.png" type="Texture" id=12]
+[ext_resource path="res://probs/musica.tscn" type="PackedScene" id=13]
+[ext_resource path="res://sprites/HUD/lineDark/lineDark30.png" type="Texture" id=14]
+[ext_resource path="res://probs/fade.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Theme" id=3]
 Button/colors/font_color = Color( 1, 1, 1, 1 )
@@ -38,12 +38,12 @@ font_data = SubResource( 1 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "on",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "off",
 "speed": 5.0
@@ -51,12 +51,12 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "on",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "off",
 "speed": 5.0
@@ -82,8 +82,6 @@ tile_data = PoolIntArray( 1441799, 4, 0, 1441824, 4, 0, 1441848, 4, 0, 1835008, 
 [node name="texto" parent="." instance=ExtResource( 5 )]
 position = Vector2( 368.215, 66.9482 )
 
-[node name="fade" parent="." instance=ExtResource( 6 )]
-
 [node name="HUD_menu" type="Node2D" parent="."]
 editor/display_folded = true
 
@@ -96,7 +94,7 @@ rect_scale = Vector2( 2.22872, 1.78872 )
 rect_pivot_offset = Vector2( 2.03802, 3.32629 )
 theme = SubResource( 3 )
 custom_fonts/font = SubResource( 2 )
-icon = ExtResource( 7 )
+icon = ExtResource( 6 )
 flat = true
 
 [node name="btnSelect" type="Button" parent="HUD_menu"]
@@ -106,7 +104,7 @@ margin_right = 551.627
 margin_bottom = 477.857
 rect_scale = Vector2( 1.33034, 1.2527 )
 custom_fonts/font = SubResource( 2 )
-icon = ExtResource( 8 )
+icon = ExtResource( 7 )
 flat = true
 
 [node name="btnMusica" type="Button" parent="HUD_menu"]
@@ -144,123 +142,31 @@ visible = false
 
 [node name="GridContainer" type="GridContainer" parent="HUD_capitulos"]
 editor/display_folded = true
-margin_left = 104.578
+margin_left = 303.086
 margin_top = 304.458
-margin_right = 941.578
+margin_right = 1140.09
 margin_bottom = 486.458
-columns = 5
+columns = 3
 
 [node name="btnFase_1" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_right = 159.0
+margin_right = 141.0
 margin_bottom = 58.0
 custom_fonts/font = SubResource( 7 )
 text = "Fase 1"
 
 [node name="btnFase_2" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 163.0
-margin_right = 327.0
+margin_left = 145.0
+margin_right = 291.0
 margin_bottom = 58.0
 custom_fonts/font = SubResource( 7 )
 text = "Fase 2"
 
 [node name="btnFase_3" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 331.0
-margin_right = 494.0
+margin_left = 295.0
+margin_right = 440.0
 margin_bottom = 58.0
 custom_fonts/font = SubResource( 7 )
 text = "Fase 3"
-
-[node name="btnFase_4" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 498.0
-margin_right = 661.0
-margin_bottom = 58.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 4"
-
-[node name="btnFase_5" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 665.0
-margin_right = 837.0
-margin_bottom = 58.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 5"
-
-[node name="btnFase_6" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_top = 62.0
-margin_right = 159.0
-margin_bottom = 120.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 6"
-
-[node name="btnFase_7" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 163.0
-margin_top = 62.0
-margin_right = 327.0
-margin_bottom = 120.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 7"
-
-[node name="btnFase_8" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 331.0
-margin_top = 62.0
-margin_right = 494.0
-margin_bottom = 120.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 8"
-
-[node name="btnFase_9" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 498.0
-margin_top = 62.0
-margin_right = 661.0
-margin_bottom = 120.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 9"
-
-[node name="btnFase_10" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 665.0
-margin_top = 62.0
-margin_right = 837.0
-margin_bottom = 120.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 10"
-
-[node name="btnFase_11" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_top = 124.0
-margin_right = 159.0
-margin_bottom = 182.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 11"
-
-[node name="btnFase_12" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 163.0
-margin_top = 124.0
-margin_right = 327.0
-margin_bottom = 182.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 12"
-
-[node name="btnFase_13" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 331.0
-margin_top = 124.0
-margin_right = 494.0
-margin_bottom = 182.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 13"
-
-[node name="btnFase_14" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 498.0
-margin_top = 124.0
-margin_right = 661.0
-margin_bottom = 182.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 14"
-
-[node name="btnFase_15" type="Button" parent="HUD_capitulos/GridContainer"]
-margin_left = 665.0
-margin_top = 124.0
-margin_right = 837.0
-margin_bottom = 182.0
-custom_fonts/font = SubResource( 7 )
-text = "Fase 15"
 
 [node name="btnBack" type="Button" parent="HUD_capitulos"]
 margin_left = 93.2125
@@ -268,10 +174,10 @@ margin_top = 10.0
 margin_right = 153.213
 margin_bottom = 64.0
 rect_scale = Vector2( -1.6106, 1.58115 )
-icon = ExtResource( 13 )
+icon = ExtResource( 12 )
 flat = true
 
-[node name="musica" parent="." instance=ExtResource( 14 )]
+[node name="musica" parent="." instance=ExtResource( 13 )]
 
 [node name="btnSair" type="Button" parent="."]
 margin_left = 911.091
@@ -280,12 +186,16 @@ margin_right = 971.091
 margin_bottom = 65.6271
 rect_scale = Vector2( 1.62655, 1.55764 )
 custom_fonts/font = SubResource( 2 )
-icon = ExtResource( 15 )
+icon = ExtResource( 14 )
 flat = true
+
+[node name="fade" parent="." instance=ExtResource( 15 )]
 [connection signal="pressed" from="HUD_menu/btnJogar" to="." method="_on_btnJogar_pressed"]
 [connection signal="pressed" from="HUD_menu/btnSelect" to="." method="_on_btnSelect_pressed"]
 [connection signal="pressed" from="HUD_menu/btnMusica" to="." method="_on_btnMusica_pressed"]
 [connection signal="pressed" from="HUD_menu/btnSom" to="." method="_on_btnSom_pressed"]
 [connection signal="pressed" from="HUD_capitulos/GridContainer/btnFase_1" to="." method="_on_btnFase_1_pressed"]
+[connection signal="pressed" from="HUD_capitulos/GridContainer/btnFase_2" to="." method="_on_btnFase_2_pressed"]
+[connection signal="pressed" from="HUD_capitulos/GridContainer/btnFase_3" to="." method="_on_btnFase_3_pressed"]
 [connection signal="pressed" from="HUD_capitulos/btnBack" to="." method="_on_btnBack_pressed"]
 [connection signal="pressed" from="btnSair" to="." method="_on_btnSair_pressed"]

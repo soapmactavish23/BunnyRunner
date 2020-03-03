@@ -56,3 +56,6 @@ func _on_btnSound_pressed():
 		
 func _hide_bar():
 	$barra_power.hide()
+
+func _on_btnMenu_pressed():
+	get_tree().call_group("scenes" , "voltar_menu")

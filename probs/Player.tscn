@@ -4,10 +4,10 @@
 [ext_resource path="res://sprites/Items/wing_left.png" type="Texture" id=2]
 [ext_resource path="res://sprites/Items/wing_right.png" type="Texture" id=3]
 [ext_resource path="res://sprites/Players/bunny1_jump.png" type="Texture" id=4]
-[ext_resource path="res://sprites/Players/bunny1_stand.png" type="Texture" id=5]
-[ext_resource path="res://sprites/Players/bunny1_walk1.png" type="Texture" id=6]
-[ext_resource path="res://sprites/Players/bunny1_walk2.png" type="Texture" id=7]
-[ext_resource path="res://sprites/Players/bunny1_hurt.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Players/bunny1_walk1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Players/bunny1_walk2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Players/bunny1_hurt.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Players/bunny1_stand.png" type="Texture" id=8]
 [ext_resource path="res://sprites/Particles/smoke.png" type="Texture" id=9]
 [ext_resource path="res://samples/jump.wav" type="AudioStream" id=10]
 [ext_resource path="res://samples/death.wav" type="AudioStream" id=11]
@@ -19,28 +19,28 @@ height = 77.6703
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "victory",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "hurt",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "victory",
+"speed": 8.0
 } ]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "asas"
 length = 0.14
 step = 0.01
@@ -69,8 +69,7 @@ tracks/1/keys = {
 "values": [ -25.0, 50.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "dust"
+[sub_resource type="Animation" id=4]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("dust:visible")
@@ -85,8 +84,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "player_elastico"
+[sub_resource type="Animation" id=5]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("anim:scale")
@@ -114,8 +112,8 @@ tracks/1/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
-collision_layer = 15
-collision_mask = 15
+collision_layer = 63
+collision_mask = 63
 script = ExtResource( 1 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
@@ -149,9 +147,9 @@ limit_top = 0
 limit_bottom = 0
 
 [node name="animation" type="AnimationPlayer" parent="."]
-anims/asas = SubResource( 5 )
-anims/dust = SubResource( 3 )
-anims/player_elastico = SubResource( 4 )
+anims/asas = SubResource( 3 )
+anims/dust = SubResource( 4 )
+anims/player_elastico = SubResource( 5 )
 
 [node name="dust" type="Node2D" parent="."]
 editor/display_folded = true
