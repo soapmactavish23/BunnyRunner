@@ -7,7 +7,7 @@ BunnyRunner, é um game infinity runner. Foi desenvolvido na Godot 3.
 [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/watch?v=z-LUJkJqp6c)
 
 ## Download
-[Game](https://drive.google.com/drive/folders/1upqkpz_PB1JwP4IiOKl6sJBb1BNtK1Y_?usp=sharing)
+[Game](https://drive.google.com/file/d/1Eeu4BFJp6MtU_iBMmQPQulOU4XO0v_vN/view?usp=sharing,%20https://drive.google.com/file/d/1tq0ytEhvuVnwiyFZTOWhaWCRDAH7NBgz/view?usp=sharing)
 
 ## Plataforma Adotada: 
   - PC
