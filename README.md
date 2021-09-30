@@ -1,5 +1,5 @@
 <h1 align="center">
-   <img src="https://firebasestorage.googleapis.com/v0/b/apostas-e1af2.appspot.com/o/godot%2Fbunny.png?alt=media&token=de21d5f0-7d86-4f3e-9870-c4ee87d9c6fe">
+   <img src="https://firebasestorage.googleapis.com/v0/b/apostas-e1af2.appspot.com/o/godot%2Fbunny.png?alt=media&token=de21d5f0-7d86-4f3e-9870-c4ee87d9c6fe" width="400">
 </h1>
 
 <h4 align="center"> 
